@@ -1,35 +1,40 @@
-// Slide navigation
+// Slide changes
 function goYes(){
-  document.getElementById('intro').classList.add('hidden');
-  document.getElementById('yesSlide').classList.remove('hidden');
+  intro.classList.add('hidden');
+  yesScene.classList.remove('hidden');
 }
-
 function backToYes(){
-  document.getElementById('noSlide').classList.add('hidden');
-  document.getElementById('yesSlide').classList.remove('hidden');
+  noScene.classList.add('hidden');
+  yesScene.classList.remove('hidden');
 }
 
-// Funny NO button
-const noBtn=document.getElementById('noBtn');
-
+// No button chaos
 noBtn.addEventListener('mouseover',()=>{
   noBtn.style.position='absolute';
-  noBtn.style.left=Math.random()*80+'%';
-  noBtn.style.top=Math.random()*80+'%';
+  noBtn.style.left=Math.random()*70+'%';
+  noBtn.style.top=Math.random()*60+'%';
 });
-
 noBtn.addEventListener('click',()=>{
-  document.getElementById('intro').classList.add('hidden');
-  document.getElementById('noSlide').classList.remove('hidden');
+  intro.classList.add('hidden');
+  noScene.classList.remove('hidden');
 });
 
-// Music autoplay on first interaction
+// Music works
 const music=document.getElementById('bgMusic');
-
 document.body.addEventListener('click',()=>{
-  if(music.paused) music.play();
+ if(music.paused) music.play();
 },{once:true});
 
 function toggleMusic(){
-  music.paused?music.play():music.pause();
+ music.paused?music.play():music.pause();
 }
+
+// Background hearts
+setInterval(()=>{
+ const h=document.createElement('div');
+ h.className='heart';
+ h.innerHTML='💗';
+ h.style.left=Math.random()*100+'vw';
+ document.getElementById('bgEffects').appendChild(h);
+ setTimeout(()=>h.remove(),8000);
+},500);
