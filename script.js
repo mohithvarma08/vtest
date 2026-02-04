@@ -1,7 +1,10 @@
 const music=document.getElementById('music');
 
-document.body.addEventListener('click',()=>{
-  if(music.paused) music.play();
+// TRUE user gesture trigger
+document.body.addEventListener('pointerdown',()=>{
+  if(music.paused){
+    music.play().catch(()=>{});
+  }
 },{once:true});
 
 function toggleMusic(){
@@ -9,8 +12,8 @@ function toggleMusic(){
 }
 
 function show(id){
-  document.querySelectorAll('.scene').forEach(s=>s.style.display='none');
-  document.getElementById(id).style.display='block';
+  document.querySelectorAll('.slide').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
 }
 
 function goYes(){
