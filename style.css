@@ -1,0 +1,91 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Poppins',sans-serif;
+  height:100vh;
+  overflow:hidden;
+  color:white;
+  background:
+    radial-gradient(circle at 20% 30%, #ff9a9e55 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, #fad0c455 0%, transparent 40%),
+    linear-gradient(135deg,#ff758c,#ff7eb3);
+}
+
+/* Slide system */
+.slide{
+  position:fixed;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
+  transition:opacity .7s ease, transform .7s ease;
+}
+
+.hidden{
+  opacity:0;
+  pointer-events:none;
+  transform:scale(1.08);
+}
+
+/* Typography */
+h1{
+  font-family:'Pacifico',cursive;
+  font-size:3.2rem;
+  margin-bottom:15px;
+}
+
+p{
+  font-size:1.3rem;
+  max-width:700px;
+  line-height:1.8;
+  margin-bottom:20px;
+}
+
+/* Buttons */
+.btn{
+  background:#ff2e63;
+  border:none;
+  color:white;
+  padding:14px 38px;
+  border-radius:40px;
+  font-size:1rem;
+  margin:10px;
+  cursor:pointer;
+  transition:.35s;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+.btn:hover{
+  transform:translateY(-3px) scale(1.07);
+  background:#ff0f4f;
+}
+
+/* Stickers */
+.sticker{
+  width:340px;
+  margin:25px 0;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+/* Dramatic text */
+.dramatic{
+  font-size:1.9rem;
+  font-weight:600;
+}
+
+/* Music button */
+.music{
+ position:fixed;
+ top:20px;
+ right:20px;
+ background:white;
+ color:#ff2e63;
+ padding:10px 14px;
+ border-radius:50%;
+ cursor:pointer;
+ font-weight:bold;
+ box-shadow:0 6px 15px rgba(0,0,0,.3);
+}

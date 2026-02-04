@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You 💌</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="music" onclick="toggleMusic()">♫</div>
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Slide 1 -->
+<div class="slide" id="intro">
+  <h1>Hey you… 💌</h1>
+  <p>I made something for you.<br>Would you like to see it?</p>
+
+  <img src="sticker1.png" class="sticker">
+
+  <div>
+    <button class="btn" onclick="goYes()">Yes 💖</button>
+    <button class="btn" id="noBtn">No 😏</button>
+  </div>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide hidden" id="noSlide">
+  <p class="dramatic">How dare you click NO 😤</p>
+  <p>That button is illegal. Try again.</p>
+
+  <img src="sticker2.png" class="sticker">
+
+  <button class="btn" onclick="backToYes()">Okay okay, show me 😅</button>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide hidden" id="yesSlide">
+  <h1>Before we go ahead…</h1>
+
+  <img src="sticker3.png" class="sticker">
+
+  <p>
+    I need to say something.<br><br>
+    You have no idea how special you are to me.<br>
+    Your smile, your laugh, your vibe — everything about you
+    makes my world brighter.
+  </p>
+
+  <button class="btn">Next ➜</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
