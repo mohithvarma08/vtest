@@ -5,13 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For You 💌</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-<div id="sparkles"></div>
 
 <audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
@@ -21,45 +19,47 @@
 <!-- INTRO -->
 <section class="scene" id="intro">
   <div class="poster">
-      <h1>Hey you… 💌</h1>
+    <h1>Hey you… I made something for you 💌</h1>
 
-      <img src="sticker1.png" class="sticker">
+    <img src="sticker1.png" class="sticker">
 
-      <p>I made something for you.<br>Would you like to see it?</p>
+    <p>Would you like to see it?</p>
 
-      <div class="buttons">
-        <button class="btn" onclick="goYes()">Yes 💖</button>
-        <button class="btn" onclick="goNo()">No 😏</button>
-      </div>
+    <div class="buttons">
+      <button class="btn" onclick="goYes()">Yes 💖</button>
+      <button class="btn" id="noBtn">No 😏</button>
+    </div>
   </div>
 </section>
 
-<!-- NO SCENE -->
+<!-- NO -->
 <section class="scene hidden" id="noScene">
   <div class="poster">
-      <h2>How dare you click NO 😤</h2>
+    <h1>How dare you click NO 😤</h1>
 
-      <img src="sticker2.png" class="sticker">
+    <img src="sticker2.png" class="sticker">
 
-      <p>That button is illegal. Try again.</p>
+    <p>That button is illegal. Try again.</p>
 
-      <button class="btn" onclick="goYes()">Okay okay, show me 😅</button>
+    <button class="btn" onclick="goYes()">Okay okay, show me 😅</button>
   </div>
 </section>
 
-<!-- YES SCENE -->
+<!-- YES -->
 <section class="scene hidden" id="yesScene">
   <div class="poster">
-      <h1>Before we go ahead…</h1>
+    <h1>Before we go ahead… I need to say something.</h1>
 
-      <img src="sticker3.png" class="sticker">
+    <img src="sticker3.png" class="sticker">
 
-      <p>
-        You have no idea how special you are to me.<br>
-        Your smile, your laugh, your vibe makes my world brighter.
-      </p>
+    <p>
+      You have no idea how special you are to me.<br><br>
+      Your smile lights up my worst days.<br>
+      Your laugh is my favorite sound.<br>
+      Your vibe makes my world feel complete.
+    </p>
 
-      <button class="btn">Next ➜</button>
+    <button class="btn">Next ➜</button>
   </div>
 </section>
 
