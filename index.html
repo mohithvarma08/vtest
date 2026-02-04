@@ -11,52 +11,56 @@
 
 <body>
 
-<div id="bgEffects"></div>
+<div id="sparkles"></div>
 
 <audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
-
 <div class="music" onclick="toggleMusic()">♫</div>
 
 <!-- INTRO -->
 <section class="scene" id="intro">
-  <div class="content">
-    <h1>Hey you… 💌</h1>
-    <p>I made something for you.<br>Would you like to see it?</p>
+  <div class="poster">
+      <h1>Hey you… 💌</h1>
 
-    <div class="buttons">
-      <button class="btn" onclick="goYes()">Yes 💖</button>
-      <button class="btn" id="noBtn">No 😏</button>
-    </div>
+      <img src="sticker1.png" class="sticker">
+
+      <p>I made something for you.<br>Would you like to see it?</p>
+
+      <div class="buttons">
+        <button class="btn" onclick="goYes()">Yes 💖</button>
+        <button class="btn" onclick="goNo()">No 😏</button>
+      </div>
   </div>
-
-  <img src="sticker1.png" class="sticker introSticker">
 </section>
 
-<!-- NO -->
+<!-- NO SCENE -->
 <section class="scene hidden" id="noScene">
-  <div class="content">
-    <h2>How dare you click NO 😤</h2>
-    <p>That button is illegal. Try again.</p>
-    <button class="btn" onclick="backToYes()">Okay okay, show me 😅</button>
-  </div>
+  <div class="poster">
+      <h2>How dare you click NO 😤</h2>
 
-  <img src="sticker2.png" class="sticker noSticker">
+      <img src="sticker2.png" class="sticker">
+
+      <p>That button is illegal. Try again.</p>
+
+      <button class="btn" onclick="goYes()">Okay okay, show me 😅</button>
+  </div>
 </section>
 
-<!-- YES -->
+<!-- YES SCENE -->
 <section class="scene hidden" id="yesScene">
-  <div class="content">
-    <h1>Before we go ahead…</h1>
-    <p>
-      You have no idea how special you are to me.<br>
-      Your smile, your laugh, your vibe makes my world brighter.
-    </p>
-    <button class="btn">Next ➜</button>
-  </div>
+  <div class="poster">
+      <h1>Before we go ahead…</h1>
 
-  <img src="sticker3.png" class="sticker yesSticker">
+      <img src="sticker3.png" class="sticker">
+
+      <p>
+        You have no idea how special you are to me.<br>
+        Your smile, your laugh, your vibe makes my world brighter.
+      </p>
+
+      <button class="btn">Next ➜</button>
+  </div>
 </section>
 
 <script src="script.js"></script>
