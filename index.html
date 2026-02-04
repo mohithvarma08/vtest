@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You 💌</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -11,56 +10,44 @@
 
 <body>
 
-<audio id="bgMusic" loop>
+<!-- PERFECT BACKGROUND (no crop) -->
+<img src="bg.jpg" class="bg">
+
+<audio id="music" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
-<div class="music" onclick="toggleMusic()">♫</div>
+<div class="musicBtn" onclick="toggleMusic()">♫</div>
 
 <!-- INTRO -->
-<section class="scene" id="intro">
-  <div class="poster">
-    <h1>Hey you… I made something for you 💌</h1>
-
-    <img src="sticker1.png" class="sticker">
-
-    <p>Would you like to see it?</p>
-
-    <div class="buttons">
-      <button class="btn" onclick="goYes()">Yes 💖</button>
-      <button class="btn" id="noBtn">No 😏</button>
-    </div>
+<section id="intro" class="scene">
+  <h1>Hey you… I made something for you 💌</h1>
+  <img src="sticker1.png" class="sticker">
+  <p>Would you like to see it?</p>
+  <div class="btns">
+    <button onclick="goYes()">Yes 💖</button>
+    <button id="noBtn">No 😏</button>
   </div>
 </section>
 
-<!-- NO -->
-<section class="scene hidden" id="noScene">
-  <div class="poster">
-    <h1>How dare you click NO 😤</h1>
-
-    <img src="sticker2.png" class="sticker">
-
-    <p>That button is illegal. Try again.</p>
-
-    <button class="btn" onclick="goYes()">Okay okay, show me 😅</button>
-  </div>
+<!-- NO SLIDE -->
+<section id="noSlide" class="scene">
+  <h1>How dare you click NO 😤</h1>
+  <img src="sticker2.png" class="sticker">
+  <p>That button is illegal. Try again.</p>
+  <button onclick="goYes()">Okay okay, show me 😅</button>
 </section>
 
-<!-- YES -->
-<section class="scene hidden" id="yesScene">
-  <div class="poster">
-    <h1>Before we go ahead… I need to say something.</h1>
-
-    <img src="sticker3.png" class="sticker">
-
-    <p>
-      You have no idea how special you are to me.<br><br>
-      Your smile lights up my worst days.<br>
-      Your laugh is my favorite sound.<br>
-      Your vibe makes my world feel complete.
-    </p>
-
-    <button class="btn">Next ➜</button>
-  </div>
+<!-- YES SLIDE -->
+<section id="yesSlide" class="scene">
+  <h1>Before we go ahead… I need to say something.</h1>
+  <img src="sticker3.png" class="sticker">
+  <p>
+    You have no idea how special you are to me.<br><br>
+    Your smile lights up my worst days.<br>
+    Your laugh is my favorite sound.<br>
+    Your vibe makes my world feel complete.
+  </p>
+  <button>Next ➜</button>
 </section>
 
 <script src="script.js"></script>
