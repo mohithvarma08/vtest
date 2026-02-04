@@ -3,10 +3,16 @@ function goYes(){
   yesScene.classList.remove('hidden');
 }
 
-function goNo(){
+noBtn.addEventListener('click',()=>{
   intro.classList.add('hidden');
   noScene.classList.remove('hidden');
-}
+});
+
+// soft playful move
+noBtn.addEventListener('mouseover',()=>{
+  noBtn.style.transform="translateX(10px)";
+  setTimeout(()=>noBtn.style.transform="translateX(0)",200);
+});
 
 // music autoplay
 const music=document.getElementById('bgMusic');
@@ -17,15 +23,3 @@ document.body.addEventListener('click',()=>{
 function toggleMusic(){
  music.paused?music.play():music.pause();
 }
-
-// sparkles
-setInterval(()=>{
- const s=document.createElement('div');
- s.innerHTML='✨';
- s.style.position='fixed';
- s.style.left=Math.random()*100+'vw';
- s.style.top=Math.random()*100+'vh';
- s.style.opacity=.3;
- document.getElementById('sparkles').appendChild(s);
- setTimeout(()=>s.remove(),4000);
-},400);
