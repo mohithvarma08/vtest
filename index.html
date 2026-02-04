@@ -10,45 +10,49 @@
 
 <body>
 
-<!-- PERFECT BACKGROUND (no crop) -->
-<img src="bg.jpg" class="bg">
+<div class="app">
 
-<audio id="music" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-<div class="musicBtn" onclick="toggleMusic()">♫</div>
+  <img src="bg.jpg" class="bg">
 
-<!-- INTRO -->
-<section id="intro" class="scene">
-  <h1>Hey you… I made something for you 💌</h1>
-  <img src="sticker1.png" class="sticker">
-  <p>Would you like to see it?</p>
-  <div class="btns">
-    <button onclick="goYes()">Yes 💖</button>
-    <button id="noBtn">No 😏</button>
+  <audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="musicBtn" onclick="toggleMusic()">♫</div>
+
+  <!-- INTRO -->
+  <div id="intro" class="slide active">
+    <h1>Hey you… I made something for you 💌</h1>
+    <img src="sticker1.png" class="sticker">
+    <p>Would you like to see it?</p>
+    <div class="btns">
+      <button onclick="goYes()">Yes 💖</button>
+      <button id="noBtn">No 😏</button>
+    </div>
   </div>
-</section>
 
-<!-- NO SLIDE -->
-<section id="noSlide" class="scene">
-  <h1>How dare you click NO 😤</h1>
-  <img src="sticker2.png" class="sticker">
-  <p>That button is illegal. Try again.</p>
-  <button onclick="goYes()">Okay okay, show me 😅</button>
-</section>
+  <!-- NO -->
+  <div id="noSlide" class="slide">
+    <h1>How dare you click NO 😤</h1>
+    <img src="sticker2.png" class="sticker">
+    <p>That button is illegal. Try again.</p>
+    <button onclick="goYes()">Okay okay, show me 😅</button>
+  </div>
 
-<!-- YES SLIDE -->
-<section id="yesSlide" class="scene">
-  <h1>Before we go ahead… I need to say something.</h1>
-  <img src="sticker3.png" class="sticker">
-  <p>
-    You have no idea how special you are to me.<br><br>
-    Your smile lights up my worst days.<br>
-    Your laugh is my favorite sound.<br>
-    Your vibe makes my world feel complete.
-  </p>
-  <button>Next ➜</button>
-</section>
+  <!-- YES -->
+  <div id="yesSlide" class="slide">
+    <h1>Before we go ahead… I need to say something.</h1>
+    <img src="sticker3.png" class="sticker">
+    <p>
+      You have no idea how special you are to me.<br><br>
+      Your smile lights up my worst days.<br>
+      Your laugh is my favorite sound.<br>
+      Your vibe makes my world feel complete.
+    </p>
+    <button>Next ➜</button>
+  </div>
+
+</div>
 
 <script src="script.js"></script>
 </body>
