@@ -2,61 +2,75 @@
 
 body{
   font-family:'Poppins',sans-serif;
+  background:#ffd6e0;
   height:100vh;
   overflow:hidden;
-  background:#ffd6e0;
-  position:relative;
 }
 
-/* Background sparkles */
-#bgEffects{
+/* sparkles */
+#sparkles{
   position:fixed;
   inset:0;
   z-index:0;
 }
 
-/* Scenes */
+/* scene */
 .scene{
   position:absolute;
   inset:0;
   display:flex;
   align-items:center;
   justify-content:center;
-  transition:opacity .6s ease, transform .6s ease;
+  transition:.6s ease;
 }
 
 .hidden{
   opacity:0;
-  pointer-events:none;
   transform:scale(1.05);
+  pointer-events:none;
 }
 
-/* Text content */
-.content{
+/* Poster layout (important) */
+.poster{
   text-align:center;
   z-index:2;
-  max-width:700px;
+  width:90%;
+  max-width:800px;
 }
 
+/* Typography */
 h1{
   font-family:'Pacifico',cursive;
-  font-size:3.4rem;
+  font-size:3.5rem;
   color:#ff2e63;
   margin-bottom:15px;
 }
 
 h2{
-  font-size:2rem;
+  font-size:2.2rem;
   color:#ff2e63;
 }
 
 p{
   font-size:1.25rem;
-  margin-bottom:30px;
   color:#444;
+  margin:25px 0;
+  line-height:1.8;
+}
+
+/* Sticker integrated as hero visual */
+.sticker{
+  width:320px;
+  margin:20px auto;
+  display:block;
+  filter:drop-shadow(0 25px 40px rgba(0,0,0,.25));
 }
 
 /* Buttons */
+.buttons{
+  margin-top:10px;
+}
+
 .btn{
   background:#ff4f7b;
   color:white;
@@ -64,24 +78,11 @@ p{
   padding:14px 38px;
   border-radius:40px;
   font-size:1rem;
-  margin:10px;
+  margin:8px;
   cursor:pointer;
   transition:.3s;
 }
 .btn:hover{transform:scale(1.08)}
-
-/* Sticker integration */
-.sticker{
-  position:absolute;
-  width:320px;
-  filter:drop-shadow(0 20px 40px rgba(0,0,0,.25));
-  z-index:1;
-}
-
-/* Custom placement per slide */
-.introSticker{ right:8%; bottom:5%; }
-.noSticker{ left:8%; bottom:5%; }
-.yesSticker{ right:10%; bottom:8%; }
 
 /* Music */
 .music{
@@ -94,17 +95,4 @@ p{
  border-radius:50%;
  cursor:pointer;
  z-index:3;
-}
-
-/* Floating hearts */
-.heart{
-  position:fixed;
-  font-size:16px;
-  opacity:.35;
-  animation:floatUp 8s linear infinite;
-}
-
-@keyframes floatUp{
-  from{transform:translateY(100vh)}
-  to{transform:translateY(-10vh)}
 }
