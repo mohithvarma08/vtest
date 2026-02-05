@@ -1,14 +1,15 @@
 const music=document.getElementById('music');
 
-// TRUE user gesture trigger
+// Try autoplay immediately
+music.play().catch(()=>{});
+
+// Also ensure play on first touch
 document.body.addEventListener('pointerdown',()=>{
-  if(music.paused){
-    music.play().catch(()=>{});
-  }
+  if(music.paused) music.play().catch(()=>{});
 },{once:true});
 
-function toggleMusic(){
-  music.paused?music.play():music.pause();
+function openSite(){
+  show('intro');
 }
 
 function show(id){
@@ -24,7 +25,6 @@ document.getElementById('noBtn').addEventListener('click',()=>{
   show('noSlide');
 });
 
-// cute chaos
 document.getElementById('noBtn').addEventListener('mouseover',e=>{
   e.target.style.transform=`translate(${Math.random()*20}px,${Math.random()*10}px)`;
 });
