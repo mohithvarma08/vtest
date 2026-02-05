@@ -34,7 +34,7 @@ html,body{
   z-index:2;
 
   opacity:0;
-  transform:translateY(40px) scale(0.96);
+  transform:translateY(20px) scale(0.97);
   pointer-events:none;
 
   transition:opacity 1.2s ease, transform 1.2s ease;
@@ -82,14 +82,14 @@ h1{
 }
 
 p{
-  font-size:1.6rem;
+  font-size:1.8rem;
   margin:25px 0;
   color:#5a3a44;
   line-height:1.7;
 }
 
 .sticker{
-  width:410px;
+  width:455px;
   margin:20px 0;
   filter:drop-shadow(0 30px 50px rgba(0,0,0,.25));
   animation:float 5s ease-in-out infinite;
@@ -101,12 +101,12 @@ p{
 }
 
 button{
-  padding:14px 40px;
+  padding:18px 48px;
   border:none;
   border-radius:30px;
   background:#ff4f7b;
   color:white;
-  font-size:1.05rem;
+  font-size:1.15rem;
   cursor:pointer;
   margin:12px;
   box-shadow:0 10px 25px rgba(0,0,0,.2);
@@ -160,4 +160,5 @@ button{
 .cardInner p{
   color:#5a3a44;
 }
+
 
