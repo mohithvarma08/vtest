@@ -1,23 +1,17 @@
 const music=document.getElementById('music');
 
-// Start music
 function startMusic(){
   music.play().catch(()=>{});
 }
 document.body.addEventListener('pointerdown', startMusic, {once:true});
 
-// PROPER transition trigger for desktop browsers
 function show(id){
-  const slides=document.querySelectorAll('.slide');
-  slides.forEach(s=>s.classList.remove('show'));
-
-  // force browser to register state change
+  document.querySelectorAll('.slide').forEach(s=>s.classList.remove('show'));
   setTimeout(()=>{
     document.getElementById(id).classList.add('show');
   },50);
 }
 
-// Initial state
 window.onload=()=>{
   show('cover');
 };
