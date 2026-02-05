@@ -4,7 +4,7 @@ html,body{
   height:100%;
   overflow:hidden;
   font-family:'Crimson Text',serif;
-  font-weight:600;   /* bold secondary font */
+  font-weight:600;
 }
 
 .app{
@@ -22,24 +22,31 @@ html,body{
   z-index:0;
 }
 
-/* Slides */
+/* Slides with animation */
 .slide{
   position:absolute;
   inset:0;
-  display:none;
+  display:flex;
   align-items:center;
   justify-content:center;
   flex-direction:column;
   text-align:center;
   z-index:2;
-  transition:opacity .6s ease, transform .6s ease;
+
+  opacity:0;
+  transform:scale(1.05);
+  pointer-events:none;
+
+  transition:opacity .7s ease, transform .7s ease;
 }
 
 .slide.active{
-  display:flex;
+  opacity:1;
+  transform:scale(1);
+  pointer-events:auto;
 }
 
-/* Cover screen */
+/* Cover */
 .cover{
   background:rgba(255,255,255,0.25);
   backdrop-filter:blur(10px);
@@ -67,7 +74,7 @@ html,body{
   color:#c2185b;
 }
 
-/* Headings */
+/* Text */
 h1{
   font-family:'Dancing Script',cursive;
   font-size:3.8rem;
