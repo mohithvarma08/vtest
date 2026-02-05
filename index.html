@@ -4,24 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Crimson+Text:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="app">
-
   <img src="bg.jpg" class="bg">
 
-  <audio id="music" loop>
+  <audio id="music" loop autoplay>
     <source src="music.mp3" type="audio/mpeg">
   </audio>
 
-  <div class="musicBtn" onclick="toggleMusic()">♫</div>
+  <!-- OPENING COVER -->
+  <div id="cover" class="slide active cover">
+      <button class="openBtn" onclick="openSite()">💌</button>
+      <p class="tapText">Tap to open</p>
+  </div>
 
   <!-- INTRO -->
-  <div id="intro" class="slide active">
+  <div id="intro" class="slide">
     <h1>Hey you… I made something for you 💌</h1>
     <img src="sticker1.png" class="sticker">
     <p>Would you like to see it?</p>
