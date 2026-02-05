@@ -1,30 +1,38 @@
 const music=document.getElementById('music');
 
-// Try autoplay immediately
-music.play().catch(()=>{});
+// Ensure music plays
+function startMusic(){
+  music.play().catch(()=>{});
+}
+document.body.addEventListener('pointerdown', startMusic, {once:true});
 
-// Also ensure play on first touch
-document.body.addEventListener('pointerdown',()=>{
-  if(music.paused) music.play().catch(()=>{});
-},{once:true});
-
-function openSite(){
-  show('intro');
+// Slide switch with animation
+function show(id){
+  document.querySelectorAll('.slide').forEach(s=>{
+    s.classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
 }
 
-function show(id){
-  document.querySelectorAll('.slide').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+// Cover button (fix for laptop)
+function openSite(){
+  startMusic();
+  setTimeout(()=>{
+    show('intro');
+  },150); // small delay for smooth feel
 }
 
 function goYes(){
   show('yesSlide');
 }
 
-document.getElementById('noBtn').addEventListener('click',()=>{
+// NO button
+const noBtn=document.getElementById('noBtn');
+
+noBtn.addEventListener('click',()=>{
   show('noSlide');
 });
 
-document.getElementById('noBtn').addEventListener('mouseover',e=>{
+noBtn.addEventListener('mouseover',e=>{
   e.target.style.transform=`translate(${Math.random()*20}px,${Math.random()*10}px)`;
 });
