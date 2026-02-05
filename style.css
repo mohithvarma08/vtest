@@ -128,27 +128,28 @@ button{
 
 .yesContent{
   width:100%;
-  height:65%;                 /* vertical centering zone */
+  height:65%;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:15px;                   /* ↓ BIG FIX: smaller gap */
-  padding:0 60px;
+  gap:80px;              /* ← balanced visual gap */
+  padding:0 100px;      /* ← equal side breathing space */
 }
 
 .leftSticker{
-  flex:1;
+  flex:0 0 auto;
   display:flex;
   align-items:center;
-  justify-content:flex-end;   /* push closer to card */
+  justify-content:center;
 }
 
 .rightCard{
-  flex:1;
+  flex:0 0 auto;
   display:flex;
   align-items:center;
-  justify-content:flex-start; /* pull card closer */
+  justify-content:center;
 }
+
 
 /* glass card */
 .cardInner{
@@ -164,3 +165,4 @@ button{
 .cardInner p{
   color:#5a3a44;
 }
+
