@@ -22,31 +22,35 @@ html,body{
   z-index:0;
 }
 
-/* Slides */
+/* ---------- SLIDES (height-aware layout) ---------- */
+
 .slide{
   position:absolute;
   inset:0;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
-  flex-direction:column;
   text-align:center;
   z-index:2;
 
   opacity:0;
-  transform:translateY(20px) scale(0.97);
+  transform:translateY(20px);
   pointer-events:none;
-
   transition:opacity 1.2s ease, transform 1.2s ease;
+
+  padding:40px 60px;
+  gap:22px;   /* controls spacing automatically */
 }
 
 .slide.show{
   opacity:1;
-  transform:translateY(0) scale(1);
+  transform:translateY(0);
   pointer-events:auto;
 }
 
-/* Cover */
+/* ---------- COVER ---------- */
+
 .cover{
   background:rgba(255,255,255,0.25);
   backdrop-filter:blur(12px);
@@ -69,77 +73,70 @@ html,body{
 }
 
 .tapText{
-  margin-top:20px;
   font-size:1.4rem;
   color:#c2185b;
 }
 
+/* ---------- TEXT ---------- */
+
 h1{
   font-family:'Dancing Script',cursive;
-  font-size:3.9rem;
+  font-size:3.6rem;
   color:#c2185b;
-  margin-bottom:10px;
+  margin-bottom:5px;
 }
 
 p{
-  font-size:1.8rem;
-  margin:25px 0;
+  font-size:1.7rem;
   color:#5a3a44;
   line-height:1.7;
+  max-width:900px;
 }
 
+/* ---------- STICKERS ---------- */
+
 .sticker{
-  width:455px;
-  margin:20px 0;
-  filter:drop-shadow(0 30px 50px rgba(0,0,0,.25));
+  width:430px;
+  filter:drop-shadow(0 25px 45px rgba(0,0,0,.25));
   animation:float 5s ease-in-out infinite;
 }
 
 @keyframes float{
   0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
+  50%{transform:translateY(-8px)}
 }
 
+/* ---------- BUTTONS ---------- */
+
 button{
-  padding:18px 48px;
+  padding:16px 46px;
   border:none;
   border-radius:30px;
   background:#ff4f7b;
   color:white;
   font-size:1.15rem;
   cursor:pointer;
-  margin:12px;
   box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
 
-/* ===== YES SLIDE SPECIAL LAYOUT ===== */
+/* ---------- YES SLIDE PERFECT LAYOUT ---------- */
 
 .yesLayout{
   justify-content:flex-start;
-  padding-top:60px;
-}
-
-.yesHeading{
-  margin-bottom:30px;
+  padding-top:50px;
+  gap:30px;
 }
 
 .yesContent{
   width:100%;
-  height:100%;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:60px;
-  padding:0 80px;
+  gap:35px;          /* REDUCED GAP (was large) */
+  padding:0 40px;
 }
 
-.leftSticker{
-  flex:1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
+.leftSticker,
 .rightCard{
   flex:1;
   display:flex;
@@ -147,18 +144,17 @@ button{
   justify-content:center;
 }
 
+/* glass card */
 .cardInner{
-  background:rgba(255,255,255,0.85);
+  background:rgba(255,255,255,0.88);
   backdrop-filter:blur(12px);
-  padding:40px 45px;
+  padding:36px 40px;
   border-radius:25px;
-  box-shadow:0 30px 60px rgba(0,0,0,0.25);
+  box-shadow:0 25px 50px rgba(0,0,0,0.25);
   max-width:520px;
   text-align:left;
 }
 
 .cardInner p{
-  color:#5a3a44;
+  font-size:1.6rem;
 }
-
-
