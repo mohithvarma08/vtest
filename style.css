@@ -22,35 +22,34 @@ html,body{
   z-index:0;
 }
 
-/* ---------- SLIDES (height-aware layout) ---------- */
-
+/* Slides */
 .slide{
   position:absolute;
   inset:0;
   display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
+  flex-direction:column;
   text-align:center;
   z-index:2;
 
   opacity:0;
-  transform:translateY(20px);
+  transform:translateY(40px) scale(0.96);
   pointer-events:none;
+
   transition:opacity 1.2s ease, transform 1.2s ease;
 
-  padding:40px 60px;
-  gap:22px;   /* controls spacing automatically */
+  gap:12px;                /* ↓ tighter vertical spacing */
+  padding:30px 60px;      /* ↓ less top/bottom space */
 }
 
 .slide.show{
   opacity:1;
-  transform:translateY(0);
+  transform:translateY(0) scale(1);
   pointer-events:auto;
 }
 
-/* ---------- COVER ---------- */
-
+/* Cover */
 .cover{
   background:rgba(255,255,255,0.25);
   backdrop-filter:blur(12px);
@@ -73,88 +72,95 @@ html,body{
 }
 
 .tapText{
+  margin-top:20px;
   font-size:1.4rem;
   color:#c2185b;
 }
 
-/* ---------- TEXT ---------- */
-
 h1{
   font-family:'Dancing Script',cursive;
-  font-size:3.6rem;
+  font-size:3.9rem;
   color:#c2185b;
-  margin-bottom:5px;
+  margin-bottom:4px;     /* ↓ reduced */
 }
 
 p{
-  font-size:1.7rem;
+  font-size:1.6rem;
+  margin:10px 0;         /* ↓ reduced */
   color:#5a3a44;
   line-height:1.7;
-  max-width:900px;
 }
 
-/* ---------- STICKERS ---------- */
-
 .sticker{
-  width:430px;
-  filter:drop-shadow(0 25px 45px rgba(0,0,0,.25));
+  width:360px;
+  margin:8px 0;          /* ↓ reduced */
+  filter:drop-shadow(0 30px 50px rgba(0,0,0,.25));
   animation:float 5s ease-in-out infinite;
 }
 
 @keyframes float{
   0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
+  50%{transform:translateY(-10px)}
 }
 
-/* ---------- BUTTONS ---------- */
-
 button{
-  padding:16px 46px;
+  padding:14px 40px;
   border:none;
   border-radius:30px;
   background:#ff4f7b;
   color:white;
-  font-size:1.15rem;
+  font-size:1.05rem;
   cursor:pointer;
+  margin:12px;
   box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
 
-/* ---------- YES SLIDE PERFECT LAYOUT ---------- */
+/* ===== YES SLIDE SPECIAL LAYOUT ===== */
 
 .yesLayout{
-  justify-content:flex-start;
-  padding-top:50px;
-  gap:30px;
+  justify-content:center;      /* vertical center */
+  padding-top:0;
+}
+
+.yesHeading{
+  margin-bottom:15px;
 }
 
 .yesContent{
   width:100%;
+  height:65%;                 /* vertical centering zone */
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:35px;          /* REDUCED GAP (was large) */
-  padding:0 40px;
+  gap:15px;                   /* ↓ BIG FIX: smaller gap */
+  padding:0 60px;
 }
 
-.leftSticker,
+.leftSticker{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;   /* push closer to card */
+}
+
 .rightCard{
   flex:1;
   display:flex;
   align-items:center;
-  justify-content:center;
+  justify-content:flex-start; /* pull card closer */
 }
 
 /* glass card */
 .cardInner{
-  background:rgba(255,255,255,0.88);
+  background:rgba(255,255,255,0.85);
   backdrop-filter:blur(12px);
-  padding:36px 40px;
+  padding:40px 45px;
   border-radius:25px;
-  box-shadow:0 25px 50px rgba(0,0,0,0.25);
+  box-shadow:0 30px 60px rgba(0,0,0,0.25);
   max-width:520px;
   text-align:left;
 }
 
 .cardInner p{
-  font-size:1.6rem;
+  color:#5a3a44;
 }
