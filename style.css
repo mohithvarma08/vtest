@@ -89,7 +89,7 @@ p{
 }
 
 .sticker{
-  width:360px;
+  width:410px;
   margin:20px 0;
   filter:drop-shadow(0 30px 50px rgba(0,0,0,.25));
   animation:float 5s ease-in-out infinite;
@@ -160,3 +160,4 @@ button{
 .cardInner p{
   color:#5a3a44;
 }
+
