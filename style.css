@@ -4,16 +4,15 @@ html,body{
   height:100%;
   overflow:hidden;
   font-family:'Crimson Text',serif;
+  font-weight:600;   /* bold secondary font */
 }
 
-/* App container fixes background split */
 .app{
   position:relative;
   width:100vw;
   height:100vh;
 }
 
-/* Perfect background */
 .bg{
   position:absolute;
   inset:0;
@@ -33,12 +32,42 @@ html,body{
   flex-direction:column;
   text-align:center;
   z-index:2;
+  transition:opacity .6s ease, transform .6s ease;
 }
 
 .slide.active{
   display:flex;
 }
 
+/* Cover screen */
+.cover{
+  background:rgba(255,255,255,0.25);
+  backdrop-filter:blur(10px);
+}
+
+.openBtn{
+  font-size:60px;
+  background:white;
+  border:none;
+  border-radius:50%;
+  padding:25px;
+  cursor:pointer;
+  box-shadow:0 15px 40px rgba(0,0,0,.25);
+  animation:breath 2s ease-in-out infinite;
+}
+
+@keyframes breath{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+}
+
+.tapText{
+  margin-top:20px;
+  font-size:1.4rem;
+  color:#c2185b;
+}
+
+/* Headings */
 h1{
   font-family:'Dancing Script',cursive;
   font-size:3.8rem;
@@ -66,16 +95,4 @@ button{
   font-size:1rem;
   cursor:pointer;
   margin:10px;
-}
-
-.musicBtn{
-  position:absolute;
-  top:20px;
-  right:20px;
-  background:white;
-  color:#c2185b;
-  padding:10px 14px;
-  border-radius:50%;
-  cursor:pointer;
-  z-index:3;
 }
